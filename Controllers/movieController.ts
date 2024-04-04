@@ -34,6 +34,18 @@ exports.getMovies = async(req:any,res:any)=>{
  }
 
 
+ //get specific movies
+exports.getaMovie = async(req:any,res:any)=>{
+    const {id} = req.params
+    try {
+     const Movie = await movies.find({_id:id})
+     res.status(200).json(Movie)
+    } catch (err) {
+     res.status(500).json(`Request failed due to ${err}`)
+    }
+ }
+
+
 //Update movies
 exports.UpdateMovie = async(req:any,res:any)=>{
  

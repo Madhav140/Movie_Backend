@@ -22,6 +22,9 @@ const router = new express.Router()
   //get all movies
   router.get('/movie/get',jwtMiddlewareConfig,moviecontroller.getMovies)
 
+  //get all movies
+  router.get('/movie/get/:id',jwtMiddlewareConfig,moviecontroller.getaMovie)
+
    //movie updation
  router.put('/movie/update/:id',jwtMiddlewareConfig,moviecontroller.UpdateMovie)
 
